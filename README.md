@@ -1,36 +1,190 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🛒NowDeals : Smart Product Price Tracker
 
-## Getting Started
+A full-stack web application that allows users to track product prices from online shopping websites. The application automatically scrapes product information, stores historical price data, and helps users monitor price changes over time.
 
-First, run the development server:
+## 🚀 Features
+
+- 🔐 Secure user authentication with Supabase
+- 📦 Add products by simply pasting a product URL
+- 🤖 Automatic product data extraction using Firecrawl AI
+- 💰 Track current product prices
+- 📈 Store and visualize price history
+- 🖼️ Display product images
+- 🔄 Update existing products automatically
+- 📱 Responsive and modern user interface
+- ⚡ Built with Next.js App Router
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- Next.js 16
+- React
+- Tailwind CSS
+- Shadcn UI
+- Recharts
+
+### Backend
+- Next.js Server Actions
+- Supabase
+
+### Database
+- PostgreSQL (Supabase)
+
+### Authentication
+- Supabase Auth (Google OAuth)
+
+### AI & Web Scraping
+- Firecrawl API
+
+---
+
+## 📂 Project Structure
+
+```
+app/
+│── actions.js
+│── auth/
+│── components/
+│── dashboard/
+│── layout.js
+│── page.js
+
+components/
+lib/
+utils/
+public/
+```
+
+---
+
+## ⚙️ Installation
+
+### Clone the repository
+
+```bash
+git clone https://github.com/rohann-afk/NowDeals-A-Product-Price-Tracker-Webapp.git
+cd smart-product-price-tracker
+```
+
+### Install dependencies
+
+```bash
+npm install
+```
+
+### Create environment variables
+
+Create a `.env.local` file in the project root.
+
+```env
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+FIRECRAWL_API_KEY=your_firecrawl_api_key
+```
+
+### Run the development server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 📸 How It Works
 
-To learn more about Next.js, take a look at the following resources:
+1. Sign in using Google.
+2. Paste a product URL.
+3. Firecrawl extracts:
+   - Product Name
+   - Current Price
+   - Currency
+   - Product Image
+4. Product information is stored in Supabase.
+5. Price history is recorded whenever the price changes.
+6. Users can monitor products from their dashboard.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🗄️ Database
 
-## Deploy on Vercel
+The project uses two main tables.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Products
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- id
+- user_id
+- url
+- name
+- current_price
+- currency
+- image_url
+- created_at
+- updated_at
+
+### Price History
+
+- id
+- product_id
+- price
+- currency
+- checked_at
+
+---
+
+## 🔑 Environment Variables
+
+| Variable | Description |
+|----------|-------------|
+| `NEXT_PUBLIC_SUPABASE_URL` | Supabase Project URL |
+| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | Supabase Anonymous Key |
+| `FIRECRAWL_API_KEY` | Firecrawl API Key |
+
+---
+
+## 📦 Main Dependencies
+
+- Next.js
+- React
+- Tailwind CSS
+- Supabase
+- Firecrawl
+- Recharts
+- Lucide React
+
+---
+
+## 🎯 Future Improvements
+
+- 📉 Price drop notifications
+- 📧 Email alerts
+- 📱 Mobile app
+- ❤️ Wishlist support
+- 🛍️ Multi-store comparison
+- 📊 Advanced analytics dashboard
+
+---
+
+## 👨‍💻 Author
+
+**Rohan Majhi**
+
+B.Tech Computer Science & Engineering
+
+GitHub: https://github.com/rohann-afk
+
+LinkedIn: https://www.linkedin.com/in/rohan-majhi-552252351/
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License.
