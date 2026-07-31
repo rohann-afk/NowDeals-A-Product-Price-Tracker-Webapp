@@ -175,7 +175,7 @@ The project uses two main tables.
 
 ## 👨‍💻 Author
 
-**Rohan Majhi**
+**Rohannn**
 
 B.Tech Computer Science & Engineering
 
